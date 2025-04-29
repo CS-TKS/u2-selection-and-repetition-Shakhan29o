@@ -6,18 +6,15 @@ food_waste = []
 
 #Loop for 7 days(a week)
 for day in range (1, 8):
-    print("Day {day}:")
+    print(f"Day {day}:") #f is needed so that {day} comes out as a number
     food_name = input("What food did you waste today(or 'none' if non was wasted): ") #Addition feature that also asks type of food wasted
     #Adding the none feature so that the client has a choice to say he wasted no food that day
-    if food_name.lower(0) == "none":
+    if food_name.lower() == "none":
         food_waste.append(0)
         print("Good job! you wasted no food today!")
      #ask for waste input
     else:
-     waste = float(input(f"Day {day}: enter food waste in grams:"))
-     # add whatever waste amount to list
-    food_waste.append(waste)
-
+     waste = float(input(f"How much grams of {food_name} did you waste?:" ))
 #calculations fo total Waste.append(waste)nd average
 total = sum(food_waste)                 # total food waste
 average = total/7                       #divided by 7 because its a week
