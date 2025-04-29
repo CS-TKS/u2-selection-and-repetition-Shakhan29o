@@ -1,4 +1,4 @@
-print("Welcom to the Food waste Logger!")
+print("Welcome to the Food waste Logger!")
 print("Track how much food you waste each day for a week")
 
 #List to store food waste amount
@@ -6,12 +6,19 @@ food_waste = []
 
 #Loop for 7 days(a week)
 for day in range (1, 8):
-    #ask for waste input
-    waste = float(input(f"Day {day}: enter food waste in grams:"))
-    # add whatever waste amount to list
+    print("Day {day}:")
+    food_name = input("What food did you waste today(or 'none' if non was wasted): ") #Addition feature that also asks type of food wasted
+    #Adding the none feature so that the client has a choice to say he wasted no food that day
+    if food_name.lower(0) == "none":
+        food_waste.append(0)
+        print("Good job! you wasted no food today!")
+     #ask for waste input
+    else:
+     waste = float(input(f"Day {day}: enter food waste in grams:"))
+     # add whatever waste amount to list
     food_waste.append(waste)
 
-#calculations fo total aaste.append(waste)nd average
+#calculations fo total Waste.append(waste)nd average
 total = sum(food_waste)                 # total food waste
 average = total/7                       #divided by 7 because its a week
 
